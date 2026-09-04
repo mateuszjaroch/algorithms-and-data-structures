@@ -1,0 +1,10 @@
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  bugprone-*,
+  performace-*,
+  modernize-*,
+  readability-*,
+  -modernize-use-trailing-return-type
+WarningsAsError: ''
+HeaderFilterRegex: 'tasks/.*/src/.*'

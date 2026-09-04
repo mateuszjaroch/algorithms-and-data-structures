@@ -1,0 +1,8 @@
+BasedOnStyl: Chromium
+Standard: Cpp1
+
+InsertBraces: true
+InsertNewlineAtEOF: true
+
+IndenWidth: 2
+ColumnLimit: 80
