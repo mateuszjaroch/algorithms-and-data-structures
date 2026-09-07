@@ -21,3 +21,17 @@ TEST_CASE("parse_line handle single field", "[csv]") {
     REQUIRE(fields.size() == 1);
     REQUIRE(fields[0] == "only");
 }
+
+TEST_CASE("compute_stats calculates sum, mean, count", "[csv]") {
+    auto stats = csv::compute_stats({"1","2","3"});
+    REQUIRE(stats.sum == 6.0);
+    REQUIRE(stats.mean == 2.0);
+    REQUIRE(stats.count == 3);
+}
+
+TEST_CASE("compute_stats skips non-numericand empty values","[csv]"){
+    auto stats= csv::compute_stats({"1", "", "abc", "3"});
+    REQUIRE(stats.count == 2);
+    REQUIRE(stats.sum == 4.0);
+
+}
